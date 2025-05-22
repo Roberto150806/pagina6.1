@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistemas de Gestión Empresarial</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">SGE</div>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="instalacionadministracion.html">Instalación y Administración</a></li>
+        <li><a href="rolesprivilegios.html">Acceso seguro y Roles y Privilegios</a></li>
+        <li><a href="informes.html">Informes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Bienvenido a la web sobre Sistemas de Gestión Empresarial</h1>
+    <img src="img/paginaprincipal.jpg" alt="Imagen principal">
+    <p>Descubre qué es un SGE, cómo instalarlo, administrarlo y mucho más.</p>
+    
+    <section>
+      <h2>¿Qué es un Sistema de Gestión Empresarial (SGE)?</h2>
+      <p>
+        Un Sistema de Gestión Empresarial (SGE) es un conjunto de herramientas de software que permite a las empresas gestionar y automatizar sus procesos internos, como la contabilidad, recursos humanos, inventario, ventas y más.
+      </p>
+      <h3>Tipos de SGE</h3>
+      <ul>
+        <li><strong>ERP (Enterprise Resource Planning):</strong> Integra todas las áreas de la empresa en un solo sistema.</li>
+        <li><strong>CRM (Customer Relationship Management):</strong> Gestiona las relaciones con los clientes.</li>
+        <li><strong>SCM (Supply Chain Management):</strong> Administra la cadena de suministro.</li>
+        <li><strong>BI (Business Intelligence):</strong> Analiza datos para la toma de decisiones.</li>
+      </ul>
+      <h3>Características principales</h3>
+      <ul>
+        <li>Automatización de procesos</li>
+        <li>Centralización de la información</li>
+        <li>Acceso seguro y controlado</li>
+        <li>Escalabilidad y personalización</li>
+        <li>Generación de informes</li>
+      </ul>
+    </section>
+  </main>
+  
+  <script>
+  // para cerrar el menu tienes que hacer clic fuera de los enlaces
+  document.querySelectorAll('.menu a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
+
+  
+  document.addEventListener('click', function(event) {
+    var menu = document.querySelector('.menu');
+    var toggle = document.getElementById('menu-toggle');
+    var hamburger = document.querySelector('.hamburger');
+    if (
+      toggle.checked &&
+      !menu.contains(event.target) &&
+      !hamburger.contains(event.target) &&
+      event.target !== toggle
+    ) {
+      toggle.checked = false;
+    }
+  });
+  </script>
+</body>
+</html>

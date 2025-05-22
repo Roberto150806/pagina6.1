@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso Seguro: Roles y Privilegios en Odoo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">SGE</div>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="instalacionadministracion.html">Instalación y Administración</a></li>
+        <li><a href="rolesprivilegios.html">Acceso seguro y Roles y Privilegios</a></li>
+        <li><a href="informes.html">Informes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Acceso Seguro a la Información en Odoo</h1>
+    <section>
+      <h2>¿Por qué es importante el acceso seguro?</h2>
+      <p>
+        El acceso seguro en un SGE como Odoo garantiza que solo las personas autorizadas puedan ver o modificar la información de la empresa. Esto protege los datos y evita errores o accesos no deseados.
+      </p>
+    </section>
+   
+    <section>
+      <h2>Información sobre los roles y privilegios</h2>
+      
+      <img src="img/imagen37.png">
+      <p>
+Para ver y modificar los roles y privilegios de los usuarios debemos acceder a los ajustes y hacer clic en gestionar usuarios.      </p>
+      
+      <img src="img/imagen38.png">
+      <p>
+        Una vez dentro podemos ver y modificar los usuarios existentes, que en este caso solo había uno que es el mio, y también podemos crear usuarios nuevos. Al darle a nuevo nos aparecería para poner el nombre del usuario, su correo y una imagen de perfil digamos.
+  Como se ve en la parte de permisos de acceso podemos asignarle permisos de Administrador o Usuario en cada apartado, en la parte de servicios puede ser administrador pero en inventario de usuario y así con todos, depende de como se quiera.
+      </p>
+      
+      <img src="img/imagen39.png">
+      <p>
+       También para logearnos podemos añadir de medida de seguridad autenticación en dos factores para que al poner nuestro correo/usuario y contraseña nos pida introducir un código que nos llegaría al correo o alguna aplicación de autenticación como puede ser las que se mencionan en la imagen, Authy, Google Authenticator o Microsoft Authenticator.
+      </p>
+      
+    </section>
+ 
+  </main>
+  <script>
+  // para cerrar el menu tienes que hacer clic fuera de los enlaces
+  document.querySelectorAll('.menu a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
+
+  
+  document.addEventListener('click', function(event) {
+    var menu = document.querySelector('.menu');
+    var toggle = document.getElementById('menu-toggle');
+    var hamburger = document.querySelector('.hamburger');
+    if (
+      toggle.checked &&
+      !menu.contains(event.target) &&
+      !hamburger.contains(event.target) &&
+      event.target !== toggle
+    ) {
+      toggle.checked = false;
+    }
+  });
+</script>
+</body>
+</html>

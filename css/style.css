@@ -1,0 +1,166 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  color: #222;
+}
+
+header nav {
+  background: #2c3e50;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-right: auto;
+  padding: 0.5em 0;
+  color: #f9ca24;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0 1em;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 0.8em;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  background: #f9ca24;
+  color: #2c3e50;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+main {
+  max-width: 800px;
+  margin: 2em auto 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #ccc;
+  padding: 2em 1em;
+}
+
+main h1 {
+  font-size: 2em;
+  color: #2980b9;
+  text-align: center;
+}
+
+main img, section img {
+  display: block;
+  margin: 1em auto;
+  max-width: 90%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+main img:hover, section img:hover {
+  transform: scale(1.05);
+}
+
+main p {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+section {
+  margin-top: 2em;
+  padding: 1em;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+section h2 {
+  color: #2c3e50;
+  font-size: 1.2em;
+  border-left: 4px solid #f9ca24;
+  padding-left: 0.5em;
+}
+
+section h3 {
+  color: #2980b9;
+  margin-top: 1em;
+  font-size: 1.4em;
+}
+
+section h4 {
+  color: #2c3e50;
+  margin-top: 1em;
+  font-size: 1.1em; 
+  font-weight: bold;
+}
+
+section ul {
+  margin: 0 0 1em 1.5em;
+  padding: 0;
+  font-size: 1em;
+}
+
+section ul li {
+  margin-bottom: 0.5em;
+}
+
+@media (max-width: 700px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #34495e;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    border-radius: 0 0 8px 8px;
+  }
+  #menu-toggle:checked + .hamburger + .menu {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+  .menu li {
+    margin: 1em 0;
+    text-align: center;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0.5em;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 0.5em 0.2em;
+  }
+  section {
+    padding: 0.7em 0.2em;
+  }
+  .logo {
+    font-size: 1.1em;
+  }
+}

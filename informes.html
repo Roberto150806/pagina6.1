@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informes y Exportación de Información en Odoo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">SGE</div>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="instalacionadministracion.html">Instalación y Administración</a></li>
+        <li><a href="rolesprivilegios.html">Seguridad</a></li>
+        <li><a href="informes.html">Informes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Elaboración de Informes y Exportación de Información en Odoo</h1>
+    <section>
+      <h2>¿Qué son los informes en Odoo?</h2>
+      <p>
+        Los informes en Odoo permiten visualizar, analizar y presentar la información almacenada en el sistema. Son útiles para tomar decisiones y hacer seguimiento de la gestión empresarial.
+      </p>
+    </section>
+    <section>
+      <h2>Cómo generar un informe</h2>
+      <img src="img/imagen42.png">
+      <p>
+        Odoo para tener un informe tienes que entrar en Informes/Analisis de movimientos y ahi dentro tendremos un informe de nuestros productos y demás cosas en la imagen lo he puesto que me lo enseñe modo gráfico, a continuación enseño los modos que tiene.
+      </p>
+     <img src="img/imagen43.png">
+      <p>
+        La primera opción es para mostrarlo con una tabla dinámica, la segunda modo lista, la tercera modo gráfico y la última modo kanban.
+      </p>
+    </section>
+    <section>
+      <h2>Exportar información</h2>
+      <img src="img/imagen40.png">
+      <p>
+        Para exportar la información debemos dirigirnos al historial de movimientos seleccionar uno o varios movimientos, darle a acciones y a exportar.
+      </p>
+      <img src="img/imagen41.png">
+      <p>
+        Tras haberle dado a exportar nos saldra este menú en el que podemos cambiar el formato de exportación y seleccionar otros campos. Una vez hecho eso le daremos a exportar descargaremos el archivo para poder importarlo en otro sitio
+      </p>
+    </section>
+    
+  </main>
+  <script>
+  // para cerrar el menu tienes que hacer clic fuera de los enlaces
+  document.querySelectorAll('.menu a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
+
+  
+  document.addEventListener('click', function(event) {
+    var menu = document.querySelector('.menu');
+    var toggle = document.getElementById('menu-toggle');
+    var hamburger = document.querySelector('.hamburger');
+    if (
+      toggle.checked &&
+      !menu.contains(event.target) &&
+      !hamburger.contains(event.target) &&
+      event.target !== toggle
+    ) {
+      toggle.checked = false;
+    }
+  });
+</script>
+</body>
+</html>
